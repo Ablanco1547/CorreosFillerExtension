@@ -1,0 +1,27 @@
+{
+    "name": "Correos Filler",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "description":"Herramienta de utilidades para Pinta Cosmetics",
+    "permissions":["storage","tabs"],
+    "host_permissions":["https://*.correos.go.cr/*"],
+    "background":{
+        "service_worker":"content.js"
+    },
+    "content_scripts":[
+        {
+            "matches": ["https://*.correos.go.cr/*"],
+            "js": ["content.js"]
+        }
+    ],
+    "action":{
+        "default_icon":{
+            "16": "icon.png",
+            "24": "icon.png",
+            "32": "icon.png"
+        },
+        "default_title": "Pinta Filler",
+        "default_popup": "popup.html"
+    }
+
+}
