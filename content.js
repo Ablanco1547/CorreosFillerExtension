@@ -2,6 +2,22 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
 
     let clientesRecibidos;
     clientesRecibidos = JSON.parse(request)[0];
+    let idProvinciaSender = document.getElementById('provincia_sender');
+    let idCantonSender = document.getElementById('canton_sender');
+    let idDistritoSender = document.getElementById('distrito_sender');
+    let idProvinciaClient = document.getElementById('provincia');
+    let idCantonClient = document.getElementById('canton');
+    let idDistritoClient = document.getElementById('distrito');
+
+    let botones = document.querySelectorAll('.btn-success');
+    let nombreClase1 = 'siguiente1';
+    let nombreClase2 = 'siguiente2';
+
+
+    let botonSiguiente1;
+    let botonSiguiente2;
+
+    let botonCrearGuia = document.querySelector('#search');
 
     clientesRecibidos.forEach(cliente => {
         nombreCliente = cliente.nombre;
@@ -15,46 +31,60 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
         
                     
     async function main(){
+        agregarClaseBoton(botones[0],nombreClase1);
+        botonSiguiente1 = document.querySelector('.siguiente1');
         console.log("Hola1");
-        await delay(5);
+        await delay(1);
         console.log("Hola2");
         llenarCosas();
-        await delay(2);
-        canton_sender(); 
+        await delay(1);
+        dispararEvento(idProvinciaSender); 
         //canton();
-        await delay(4);
-        llenarCanton();
-        await delay(2);
+        await delay(1);
         console.log("Hola3")
-        distrito_sender();
-        await delay(0.4);
+        llenarCanton();
+        await delay(1);
+        console.log("Hola4")
+        dispararEvento(idCantonSender);
+        await delay(1.5);
         llenarDistrito();
-        llenarcodigoPostal();
-        await delay(0.4);
-        siguiente(1);
-        await delay(0.4);
+        await delay(1.5);
+        console.log("Hola5")
+        dispararEvento(idDistritoSender);
+        console.log("Hola6")
+        await delay(1);
+        console.log("Hola7")
+        clickearBoton(botonSiguiente1);
+        console.log("Hola8")
+        await delay(0.5);
+        agregarClaseBoton(botones[2],nombreClase2)
+        botonSiguiente2 = document.querySelector('.siguiente2');
         llenarDetalleEnvio();
-        await delay(0.4);
-        siguiente(2);
-        await delay(0.4);
+        await delay(0.5);
+        clickearBoton(botonSiguiente2);
+        await delay(0.5);
         llenarCosasDestinatario()
         await delay(0.2);
-        canton(); 
-        await delay(0.4);
+        dispararEvento(idProvinciaClient); 
+        await delay(1);
         llenarCantonDestinatario();
-        await delay(0.2);
-        distrito();
-        await delay(0.4);
-        //llenarDistritoDestinatario();
+        await delay(1);
+        dispararEvento(idCantonClient); 
+        await delay(1);
+        llenarDistritoDestinatario();
         //llenarcodigoPostalDestinatario();
-        await delay(0.4);
+        await delay(1);
+        dispararEvento(idDistritoClient);
         habilitarBoton();
-        await delay(0.4);
-        //clickearBoton();
+        await delay(1);
+        alert('se ha creado la primer guia')
+        //clickearBoton(botonCrearGuia);
 
 
 
     }
+
+
     function llenarCanton(){
         document.getElementById('canton_sender').value = "27"
     }
@@ -69,10 +99,10 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
 
     function llenarCosas(){
         document.getElementById('sender_identification_type').value = "1";
-        document.getElementById('sender_id').value = "1111111";
+        document.getElementById('sender_id').value = "115470624";
         document.getElementById('sender_name').value = "Pinta Prueba";
         document.getElementById('sender_phone').value = "88888888";
-        document.getElementById('sender_mail').value = "thisandthat@gmail.com"
+        document.getElementById('sender_mail').value = "Raquel@gmail.com"
         document.getElementById('provincia_sender').value = "2"
         document.getElementById('sender_direction').value = "300 mts sur de algun lugar"
 
@@ -119,12 +149,9 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
     
     };
 
-    const clickearBoton = () => {
-        let botonCrearGuia = document.querySelector('#search');
-
-        botonCrearGuia.click();
-        
-    
+    const clickearBoton = (boton) => {
+        console.log(boton);
+        boton.click();
     };
 
 
@@ -137,6 +164,10 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
         });
     };
 
+    const dispararEvento = (id) => {
+        var event = new Event('change');
+        id.dispatchEvent(event);
+    };
     
     
     const nuevoFormulario = () => {
@@ -148,6 +179,9 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
         
     };
 
+    const agregarClaseBoton = (boton,nombreClase) => {
+        boton.classList.add(nombreClase);
+    };
 
 //para traer la lista de cantones
 
