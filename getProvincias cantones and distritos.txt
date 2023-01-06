@@ -1,0 +1,32 @@
+
+
+let listaCantones = document.getElementById('canton_sender')
+
+console.log(listaCantones[5].innerHTML)
+let listaProvincia = document.getElementById('provincia_sender')
+
+
+console.log(listaProvincia)
+
+
+for(let i=0; i < listaCantones.length;i++){
+    let cantonSeleccionado = listaCantones[i].innerHTML;
+    console.log(cantonSeleccionado);
+}
+
+for(let i=0; i < listaCantones.length;i++){
+    let idCantonSeleccionado = listaCantones[i].value;
+    console.log(idCantonSeleccionado);
+}
+
+let listaDistritos = document.getElementById('distrito_sender')
+
+for(let i=0; i < listaDistritos.length;i++){
+    let idDistritoSeleccionado = listaDistritos[i].innerHTML;
+    console.log(idDistritoSeleccionado);
+}
+
+for(let i=0; i < listaDistritos.length;i++){
+    let idDistritoSeleccionado = listaDistritos[i].value;
+    console.log(idDistritoSeleccionado);
+}
