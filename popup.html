@@ -6,23 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="estilo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,700&family=Montserrat:wght@100;300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="popup">
 
+        <div>
+            <h1 class="titulo">CORREOS FILLER<p class="puntoVerdeTitulo">.</p></h1>
+            <p class="nombreEmpresa">bypinta</p>
+        </div>
+        <img class="vectorLinea" src="vectorLinea.svg" alt="linea de vector para separar el titulo del contenido" srcset="">
+        <div id="linkDirecto">
+            <a href="https://sucursal.correos.go.cr/web/guiaWeb" target="_blank" class="linkCorreos">Abrir Correos de Costa Rica</a>
+        </div>
         <div >
+            <button id="buttonFalso" class="botonSeleccionar"> <span class="botonSeleccionarText"> Seleccionar archivo </span></button>
             <input class="form-control" type="file" id="input" accept=".xls,.xlsx">
         </div>
         <div>
-            <button id="button" class="botonConvert">Convert</button>
+            <button id="button" class="botonConvert"> <span class="botonConvertText">Comenzar</span></button>
         </div>
     
         <div class="col-md-12">
             <pre id="jsondata"></pre>
         </div>
-        <div id="linkDirecto">
-            <a href="https://sucursal.correos.go.cr/web/guiaWeb" target="_blank">Abrir sitio de Correos de Costa Rica</a>
+
+        <div>
+            <p class="version"> V 1.0.0</p>
         </div>
+
 
     </div>
 
