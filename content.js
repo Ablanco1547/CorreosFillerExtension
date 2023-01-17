@@ -85,11 +85,11 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
                     function llenarCosas(){
                         win.document.getElementById('sender_identification_type').value = "1";
                         win.document.getElementById('sender_id').value = "115470624";
-                        win.document.getElementById('sender_name').value = "Prueba";
-                        win.document.getElementById('sender_phone').value = "88888888";
-                        win.document.getElementById('sender_mail').value = "prueba@gmail.com"
+                        win.document.getElementById('sender_name').value = "Adrian Blanco Cordero";
+                        win.document.getElementById('sender_phone').value = "83182887";
+                        win.document.getElementById('sender_mail').value = "amtatres@gmail.com"
                         win.document.getElementById('provincia_sender').value = "2"
-                        win.document.getElementById('sender_direction').value = "300 mts sur de algun lugar"
+                        win.document.getElementById('sender_direction').value = "300 mts sur del supercoop"
             
                     };
 
@@ -142,8 +142,8 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
                     };
             
                     
-                    const habilitarBoton = () => {
-                        let botonCrearGuia = win.document.querySelector('#search');
+                    const habilitarBoton = (botonCrearGuia) => {
+
             
                         botonCrearGuia.removeAttribute("disabled")
                         
@@ -234,10 +234,14 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
                         await delay(2);
                         let event6 = new Event('change');
                         win.document.getElementById('distrito').dispatchEvent(event6);
-                        habilitarBoton();
-;
+
+                        let botonCrearGuia = win.document.querySelector('#search');
+
+                        habilitarBoton(botonCrearGuia);
                         await delay(1);
-                        //win.close();
+                        clickearBoton(botonCrearGuia);
+                        await delay(45);
+                        win.close();
                         console.log('se ha creado la guia de ' + cliente.nombre)
 
                         
