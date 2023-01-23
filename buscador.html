@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <div>
+        <input type="search" placeholder="Buscar canton" id="barraCanton">
+        <input type="search" placeholder="Buscar distrito" id="barraDistrito">
+    </div>
+
+    <div>
+        <select name="seleccionarProvincia" id="selectProvincia">
+            <option value="seleccione el provincia">Seleccione la provincia</option>
+            <option value="san jose">san jose</option>
+            <option value="alajuela">alajuela</option>
+            <option value="cartago">cartago</option>
+            <option value="heredia">heredia</option>
+            <option value="guanacaste">guanacaste</option>
+            <option value="puntarenas">puntarenas</option>
+            <option value="limon">limon</option>
+        </select>
+        <select name="seleccionarCanton" id="selectCanton">
+            <option value="seleccione el canton">Seleccione el canton</option>
+            <div id="cantonOpcionesDiv">
+                <option value="">.</option>
+            </div>
+        </select>
+        <select name="seleccionarDistrito" id="selectDistrito">
+            <option value="seleccione el distrito">Seleccione el distrito</option>
+        </select>
+    </div>
+    <div id="respuestaBuscador">
+        <table>
+
+        </table>
+    </div>
+    <div id="respuestaSelect">
+        <table>
+            <thead>
+                <tr>
+                    <th>Provincia</th>
+                    <th>Canton</th>
+                    <th>Distrito</th>
+                </tr>
+            </thead>
+            <tbody id="tablaSelect">
+
+            </tbody>
+        </table>
+    </div>
+
+
+
+    <script src="buscador.js"></script>
+
+</body>
+</html>
