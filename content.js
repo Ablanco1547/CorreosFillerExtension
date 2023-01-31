@@ -5,7 +5,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
 
 
     let botonCrearGuia = document.querySelector('#search');
-
+    let tiempo = 1000;
 
     const timer = ms => new Promise(res => setTimeout(res, ms));
     async function load () {
@@ -37,7 +37,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
 
                 let win = window.open('https://sucursal.correos.go.cr/web/guiaWeb');
 
-                
+                tiempo = 4000
 
 
                 win.test = function () {
@@ -183,30 +183,30 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
 
                         //await delay(1);
                         llenarCosas();
-                        await delay(1);
+                        await delay(3);
 
 
                         //dispararEvento(idProvinciaSender); 
                         let event = new Event('change');
                         win.document.getElementById('provincia_sender').dispatchEvent(event);
                         //canton();
-                        await delay(1);
+                        await delay(3);
 
                         llenarCanton();
-                        await delay(1);
+                        await delay(3);
 
                         //dispararEvento(idCantonSender);
                         let event2 = new Event('change');
                         win.document.getElementById('canton_sender').dispatchEvent(event2);
-                        await delay(1);
+                        await delay(3);
                         llenarDistrito();
-                        //await delay(1);
+                        await delay(3);
 
                         //dispararEvento(idDistritoSender);
                         let event3 = new Event('change');
                         win.document.getElementById('distrito_sender').dispatchEvent(event3);
 
-                        await delay(0.5);
+                        await delay(2);
 
                         clickearBoton(botonSiguiente1);
 
@@ -221,24 +221,24 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
                         llenarCosasDestinatario();
                         await delay(1);
                         llenarProvinciaDestinatario();
-                        await delay(2);
+                        await delay(3);
                         let event4 = new Event('change');
                         win.document.getElementById('provincia').dispatchEvent(event4);
-                        await delay(2);
+                        await delay(3);
                         llenarCantonDestinatario();
-                        await delay(2);
+                        await delay(3);
                         let event5 = new Event('change');
                         win.document.getElementById('canton').dispatchEvent(event5);
-                        await delay(2);
+                        await delay(3);
                         llenarDistritoDestinatario();
-                        await delay(2);
+                        await delay(3);
                         let event6 = new Event('change');
                         win.document.getElementById('distrito').dispatchEvent(event6);
 
                         let botonCrearGuia = win.document.querySelector('#search');
-
+                        await delay(2);
                         habilitarBoton(botonCrearGuia);
-                        await delay(1);
+                        await delay(8);
                         clickearBoton(botonCrearGuia);
                         await delay(45);
                         win.close();
@@ -262,8 +262,9 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
                 win.test();
 
             }
+            console.log(tiempo)
+            await timer(tiempo);
 
-            await timer(3000);
             
             nuevaVentana();
 

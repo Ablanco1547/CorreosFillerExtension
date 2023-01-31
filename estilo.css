@@ -5,13 +5,17 @@
     --blanco: #ffffff;
     --montserrat: 'Montserrat', sans-serif;
     --lato:'Lato', sans-serif;
-    --defaultMargin: 8.5px;
+    --defaultMargin: 10px;
 
 }
 
 body{
     margin: 0;
     border: none;
+    background-color:var(--azul);
+    color: var(--blanco);
+    font-family: var(--montserrat);
+    overflow-x: hidden;
 }
 
 
@@ -44,6 +48,8 @@ button{
     margin: 0;
     padding: 0;
     position: relative;
+    transform: translateY(-15px);
+
 }
 
 
@@ -63,7 +69,7 @@ button{
 
 .vectorLinea{
     margin-bottom: var(--defaultMargin);
-    margin-top: 15px;
+    margin-top: -15px;
     margin-bottom: var(--defaultMargin);
 }
 
@@ -134,7 +140,7 @@ input[type="file" i]{
     border: 1px solid #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 50px;
-    margin: var(--defaultMargin);
+    margin: 15px 5px 7.5px 5px;
     cursor: pointer;
 
 }
@@ -191,7 +197,7 @@ input[type="file" i]{
     border-radius: 50px;
     position: relative;
     cursor: pointer;
-    margin: var(--defaultMargin);
+    margin: 7.5px 10px 15px 10px;
 }
 
 
@@ -252,3 +258,170 @@ input[type="file" i]{
 .margen{
     margin-top: var(--defaultMargin);
 }
+
+
+
+/*BUSCADOR*/
+
+.contenedorTitulo{
+    font-family: var(--lato) !important;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.tituloBuscador{
+    font-family: var(--lato) !important;
+    font-weight: 700;
+    color: white;
+    font-size: 48px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.puntoVerdeTitulo{
+    display: inline;
+    color: #76BC21;
+    font-size: 70px;
+    margin: 0;
+    padding: 0;
+}
+
+.vectorLineaBuscador{
+    margin-bottom: var(--defaultMargin);
+    margin-top: 15px;
+    margin-bottom: var(--defaultMargin);
+    width: 100%;
+    height: 5px;
+}
+.contenedorLineas{
+    display: flex;
+}
+
+.contenedorInput{
+    width: 100%;
+    height: 68px;
+    display: flex;
+    justify-content: center;
+    margin:  0px 0px 15px 0px;
+}
+
+
+.contenedorInput input{
+    height: 30px;
+    width: 500px;
+    margin: 10px;
+    border: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.692);
+    background-color: #003057;
+    /*background-color: var(--blanco);*/
+    color: var(--blanco);
+    font-size: 20px;
+    border-radius: 2px;
+    box-shadow: 8px 7px 29px -1px rgba(0, 0, 0, 0.219);
+
+}
+
+
+textarea:focus, input:focus select:focus select:active{
+    outline: none;
+    border: none;
+}
+
+
+.contenedorInput input:active{
+    color: var(--blanco);
+}
+
+.contenedorInput input::placeholder{
+    color: rgba(255, 255, 255, 0.692);
+    font-weight: 200;
+}
+
+.contenedorSelects{
+    margin:  0px 0px 15px 0px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 68px;
+
+}
+
+.contenedorSelects select{
+    font-family: var(--montserrat);
+    height: 50px;
+    width: 300px;
+    margin: var(--defaultMargin);
+    font-size: 20px;
+    /*color: #003057;*/
+    /*background-color: rgb(255, 255, 255);*/
+    color:var(--blanco);
+    background-color: var(--azul);
+    border: none;
+    box-shadow: 8px 7px 29px -1px rgba(0, 0, 0, 0.219);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.692);
+}
+
+#respuestaSelect{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+table {
+    width: auto;
+    display:block;
+}
+thead, tbody { display: block; }
+thead {
+    width: auto;
+}
+tbody {
+    height: 480px;
+    overflow-y: auto;
+}
+  
+  
+
+#respuestaSelect th{
+    width: 400px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    position: relative;
+}
+
+#respuestaSelect th:after {
+    content: '';
+    position: absolute;
+    width: 80%;
+    transform: scaleX(2);
+    transform: translateX(40px);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--verde);
+    transform-origin: bottom right;
+  }
+
+#respuestaSelect tr{
+    
+    font-size: 28px;
+    text-align: center;
+
+}
+#respuestaSelect tr:nth-child(even){
+    background-color: #0a3861;
+    color: #fff;
+  }
+#respuestaSelect td{
+    width: 400px;
+    padding: 10px 0px;
+    margin: 0;
+    border-bottom: 1.5px solid rgba(0, 0, 0, 0.356);
+}
+
+h2{
+    margin-bottom: 0px !important;
+    text-align:center;
+    position: relative;
+}
+

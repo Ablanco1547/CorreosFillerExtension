@@ -4,17 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Buscador Cantones/Distritos</title>
+    <link rel="icon" type="image/x-icon" href="icon_128.png">
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,700&family=Montserrat:wght@100;300;400;500;600&display=swap" rel="stylesheet">
+
 </head>
 <body>
+    <div class="contenedorTitulo">
+    <h1 class="tituloBuscador">Buscador de cantones y distritos<p class="puntoVerdeTitulo">.</p></h1>
+    </div>
+    <div class="contenedorLineas">
+    <img class="vectorLineaBuscador" src="vectorLinea.svg" alt="linea de vector para separar el titulo del contenido" srcset="">
+    <img class="vectorLineaBuscador" src="vectorLinea.svg" alt="linea de vector para separar el titulo del contenido" srcset="">
+    <img class="vectorLineaBuscador" src="vectorLinea.svg" alt="linea de vector para separar el titulo del contenido" srcset="">
+    <img class="vectorLineaBuscador" src="vectorLinea.svg" alt="linea de vector para separar el titulo del contenido" srcset="">
+    <img class="vectorLineaBuscador" src="vectorLinea.svg" alt="linea de vector para separar el titulo del contenido" srcset="">
+    <img class="vectorLineaBuscador" src="vectorLinea.svg" alt="linea de vector para separar el titulo del contenido" srcset="">
+     
+    </div>   
+    <h2>Busqueda por input</h2>
+    <div class="contenedorInput">
 
-
-    <div>
         <input type="search" placeholder="Buscar canton" id="barraCanton">
         <input type="search" placeholder="Buscar distrito" id="barraDistrito">
     </div>
-
-    <div>
+    <h2>Busqueda por seleccion</h2>
+    <div class="contenedorSelects">
         <select name="seleccionarProvincia" id="selectProvincia">
             <option value="seleccione el provincia">Seleccione la provincia</option>
             <option value="san jose">san jose</option>
@@ -34,11 +51,6 @@
         <select name="seleccionarDistrito" id="selectDistrito">
             <option value="seleccione el distrito">Seleccione el distrito</option>
         </select>
-    </div>
-    <div id="respuestaBuscador">
-        <table>
-
-        </table>
     </div>
     <div id="respuestaSelect">
         <table>
